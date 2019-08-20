@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <style>
+        ul {
+            list-style-type: none;
+            font-color: white;
+        }
+        h1{
+          color: white;
+          font: cursive;
+          font-size: 48px;
+        }
+        li{
+          color: white;
+        }
+        li::before {
+            font-color: white;
+            display:inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.25rem;
+            content:"";
+        }
+        .open::before, .closed::before {
+            background-size: 1rem 1rem;
+            position: relative;
+            top: 0.25rem;
+            opacity: 0.3;
+        }
+        .open::before {
+            background-image: "images/background.jpg";
+        }
+        .closed::before {
+            background-image: "images/background.jpg");
+        }
+        .closed .closed::before, .closed .open::before {
+            display: none;
+        }
+    </style>
+</head>
+<body background = "images/background.jpg">
+    <h1> Music
+      <img src="" width="50px"></img>
+    </h1>
+    <ul is="expanding-list">
+        <li font-color = "white">A Moment Apart
+            <ul>
+                <li>Info
+                    <ul>
+                        <li> Released: September  8, 2017 </li>
+                          <li> Features:
+                            Leon Bridges, Kelsey Bulkin, The Chamanas,
+                            Mansionair, Sasha Sloan, Regina Spektor, Naomi Wild,
+                            WYNNE and RY X.
+                          </li>
+                        </li>
+                    </ul>
+                </li>
+                <li>Songs
+                    <ul>
+                        <li>Intro</li>
+                        <li>A Moment Apart</li>
+                        <li>Higher Ground</li>
+                        <li>Boy</li>
+                        <li>Line Of Sight</li>
+                        <li>Late Night</li>
+                        <li>Across The Room</li>
+                        <li>Meridian</li>
+                        <li>Everything At Your Feet</li>
+                        <li>Just A Memory</li>
+                        <li>Divide</li>
+                        <li>Thin Floors And Tall Ceilings</li>
+                        <li>La Ciudad</li>
+                        <li>Falls</li>
+                        <li>Show Me</li>
+                        <li>Corners Of The Earth</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>In Return
+            <ul>
+                <li> Info
+                  <ul>
+                      <li> Released: September  9, 2014 </li>
+                        <li>
+                          Features:
+                          Alexandra Cheatle, Shy Girls, Dan Vidmar, Jenni Potts,
+                          Sean Kusanagi, Zyra, Jade Pybus, Monsoonsiren,
+                          Madelyn Grant, Briana Marela
+                        </li>
+                      </li>
+                  </ul>
+                </li>
+                <li>Songs
+                  <ul>
+                      <li>Always This Late</li>
+                      <li>Say My Name</li>
+                      <li>Bloom</li>
+                      <li>All We Need</li>
+                      <li>Sundara</li>
+                      <li>White Lies</li>
+                      <li>Kusanagi</li>
+                      <li>Echoes</li>
+                      <li>It's Only</li>
+                      <li>Koto</li>
+                      <li>Memories That You Call</li>
+                      <li>Sun Models</li>
+                      <li>For Us</li>
+                  </ul>
+                </li>
+              </ul>
+          </li>
+          <li>Summer's Gone
+              <ul>
+                  <li> Info
+                    <ul>
+                        <li> Released: September  6, 2012 </li>
+                          <li>
+                            Features:
+                            Cumulus
+                          </li>
+                        </li>
+                    </ul>
+                  </li>
+                  <li> Songs
+                      <ul>
+                          <li>Intro</li>
+                          <li>How Did I Get Here</li>
+                          <li>I Want You</li>
+                          <li>Above The Middle</li>
+                          <li>We Were Young</li>
+                          <li>Today</li>
+                          <li>Tuytus</li>
+                          <li>Rely</li>
+                          <li>Hey Now</li>
+                          <li>If You Don't</li>
+                          <li>Don't Stop</li>
+                          <li>iPlayYouListen</li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+    </ul>
+
+    <script src="javascripts/expandingList.js"></script>
+</body>
+</html>
