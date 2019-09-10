@@ -6,11 +6,13 @@ var handlebars = require('express3-handlebars')
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+
+var index = require('./routes/index');
+var photos = require('./routes/photos')
 //var usersRouter = require('./routes/users');
 
 var app = express();
-
+console.log(module);
 // view engine setup
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', index);
+app.use('/', photos);
+app.get("/index", function (req, res) {
+   res.sendFile('index.handlebars', { root : VIEWS });
+
+ });
+ app.get('/photos', function(req, res){
+ res.sendFile('photos.handlebars', {root: VIEWS});
+});
+
+
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
@@ -31,7 +43,7 @@ if ('development' == app.get('env')) {
 }
 
 module.exports = app;
-app.get('/', indexRouter.view);
+app.get('/', index.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

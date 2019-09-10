@@ -3,47 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Music</title>
-    <style>
-        ul {
-            list-style-type: none;
-            font-color: white;
-        }
-        h1{
-          color: white;
-          font: cursive;
-          font-size: 48px;
-        }
-        li{
-          color: white;
-        }
-        li::before {
-            font-color: white;
-            display:inline-block;
-            width: 1rem;
-            height: 1rem;
-            margin-right: 0.25rem;
-            content:"";
-        }
-        .open::before, .closed::before {
-            background-size: 1rem 1rem;
-            position: relative;
-            top: 0.25rem;
-            opacity: 0.3;
-        }
-        .open::before {
-            background-image: "images/background.jpg";
-        }
-        .closed::before {
-            background-image: "images/background.jpg");
-        }
-        .closed .closed::before, .closed .open::before {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 </head>
 <body background = "images/background.jpg">
-    <h1> Music
+    <h1> ODESZA
       <img src="" width="50px"></img>
+      <a href = "photos.handlebars"> PHOTOS </a>
+
     </h1>
     <ul is="expanding-list">
         <li font-color = "white">A Moment Apart
@@ -145,7 +111,27 @@
               </ul>
           </li>
     </ul>
-
     <script src="javascripts/expandingList.js"></script>
+    <br />
+    <br />
+    <form id="odeszaForm">
+      <h3> What is your favorite Odesza Album?</h3>
+      <input id="poll1" type="radio" name="poll1" value="Summers Gone">
+      <label for = "poll1" style = "color:white;"> Summer's Gone </label> <br />
+      <input id="poll2" type="radio" name="website_poll" value="In Return">
+      <label for = "poll2" style = "color:white;"> In Return </label> <br/>
+      <input id="poll3" type="radio" name="website_poll" value="A Moment Apart">
+      <label for = "poll3" style = "color:white" > A Moment Apart </label> <br/>
+      <br/>
+      <h3> What is your favorite song? </h3>
+      <input type="text" name="favorite" id="favorite">
+      <br/>
+      <br/>
+      <button type="submit"> Submit </button>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <script src="javascripts/main.js"></script>
 </body>
 </html>
