@@ -115,8 +115,9 @@
     <br />
     <br />
     <form id="odeszaForm">
+      <form id="odeszaForm" method="POST" action="..." onsubmit="myButton.disabled = true; return true;">
       <h3> What is your favorite Odesza Album?</h3>
-      <input id="poll1" type="radio" name="poll1" value="Summers Gone">
+      <input id="poll1" type="radio" name="website_poll" value="Summers Gone">
       <label for = "poll1" style = "color:white;"> Summer's Gone </label> <br />
       <input id="poll2" type="radio" name="website_poll" value="In Return">
       <label for = "poll2" style = "color:white;"> In Return </label> <br/>
@@ -127,11 +128,12 @@
       <input type="text" name="favorite" id="favorite">
       <br/>
       <br/>
-      <button type="submit"> Submit </button>
-    </form>
+      <!--<button onClick="this.disabled = true;"> <input type="submit" name = "myButton" onclick="this.disabled=true;">Submit</button>-->
+      <input type="submit" name="myButton" value="Submit" id = "myButton" this.disabled=false;>
+      </form>
     <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
 </body>
 </html>

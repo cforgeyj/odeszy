@@ -20,13 +20,31 @@ document.getElementById('odeszaForm').addEventListener('submit', submitForm);
 function submitForm(event){
   event.preventDefault();
   //get values
-  //var album = getInputVal();
+  console.log("top of submit form");
+  var radios = document.getElementsByName('website_poll');
+  for (var i = 0, length = radios.length; i < length; i++)
+{
+ if (radios[i].checked)
+ {
+  // do whatever you want with the checked radio
+    var album = radios[i].value;
+  // only one radio can be logically checked, don't check the rest
+  break;
+ }
+}
   var favorite = getInputVal('favorite');
-
   //save response
-  saveResponse(favorite);
+  console.log("in submit form");
+  document.getElementById("myButton").disabled =true;
+  saveResponse(album, favorite);
 
 }
+/**
+$(document).ready(function() {
+  $("#yourButton").one("click", function() {
+    // Add content...
+});
+});**/
 
 //function to get form value
 function getInputVal(id){
@@ -34,11 +52,11 @@ function getInputVal(id){
 }
 
 //save response to responses in firebaseio
-function saveResponse(favorite){
-  console.log("hi");
-  console.log(favorite);
+function saveResponse(album, favorite){
+  console.log("here");
   var newResponseRef = responseRef.push();
   newResponseRef.set({
+    "Favorite Album": album,
     favorite: favorite,
   });
 }
